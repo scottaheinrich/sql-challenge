@@ -43,7 +43,7 @@ app.use( function( req, res, next ) {
 app.get('/', function(req, res, next){
   db.any('SELECT * FROM users')
     .then(function(data){
-      return res.render('index', {data: data})
+      return res.render('index', {users: data})
     })
     .catch(function(err){
       return next(err);
